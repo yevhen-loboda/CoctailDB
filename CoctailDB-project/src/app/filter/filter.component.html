@@ -1,0 +1,33 @@
+<header class="page-header">
+    <h1>Ordinary Drink</h1>
+</header>
+<main>
+<form  [formGroup]="filterForm">
+    <!-- <div class="">
+        <div *ngFor="let coctail of coctailsList">
+          <input type="checkbox" checked formControlName="coctails" [value] = "coctail">
+            {{coctail.strCategory}}
+        </div>
+    </div> -->
+
+    <mat-selection-list #filter formControlName="coctails" >
+            <mat-list-option *ngFor="let item of filtersList" [value]="item">
+              {{item.strCategory}}
+            </mat-list-option>
+            <mat-list-option *ngFor="let item of equipmentList" [value]="item" [selected] ="item.selected">
+              {{item.strCategory}}
+            </mat-list-option>
+          </mat-selection-list>
+          <p>
+            Filters selected: {{filter.selectedOptions.selected.length}}
+          </p>
+    <div>
+      <button type="submit" (click) = "getCoctailsList()">APPLY</button>
+    </div>
+    <ul *ngFor="let item of coctailsList">
+      <li>{{item.strDrink}}
+      </li>
+    </ul>
+
+  </form>
+  </main>
