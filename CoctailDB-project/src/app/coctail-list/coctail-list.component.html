@@ -1,2 +1,22 @@
-<p>coctail-list works!</p>
-<app-filter></app-filter>
+<header class="page-header">
+  <img class="page-name" src = "assets/Coctail DB.png">
+  <img class="page-icon" src = "assets/cocktail 1.png">
+</header>
+<main class="main">
+  <div class="filter-holder">
+  <form  [formGroup]="filterForm" >
+    <mat-selection-list formControlName="coctails" (selectionChange)='selected($event)' >
+      <mat-list-option *ngFor="let item of filtersList" [value]="item.strCategory">
+        {{item.strCategory}}
+      </mat-list-option>
+    </mat-selection-list>
+      <button type="submit" class="apply-button" (click)="getCoctailsList()">APPLY</button>
+    </form>
+    </div>
+    <div class="content-holder">
+      <div *ngFor="let item of coctailsList" class="item-holder">
+        <img class="coctail-icon" [src] = "item.strDrinkThumb">
+        <div class="coctail-name">{{item.strDrink}}</div>
+      </div>
+    </div>
+  </main>

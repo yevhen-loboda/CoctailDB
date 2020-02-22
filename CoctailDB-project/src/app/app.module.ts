@@ -6,7 +6,6 @@ import { MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { CoctailListComponent } from './coctail-list/coctail-list.component';
-import { FilterComponent } from './filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -14,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     CoctailListComponent,
-    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +24,5 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  // exports: [MatListModule]
 })
 export class AppModule { }
